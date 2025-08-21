@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#7F00FF">
+  <title>MediBox — Maintenance</title>
+  <meta name="description" content="Pharmacy maintenance page for MediBox. Care, delivered.">
+  <meta property="og:title" content="MediBox — Maintenance"/>
+  <meta property="og:description" content="Pharmacy maintenance page for MediBox. Care, delivered."/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="v-mesh">
+  <header class="topbar">
+    <a class="home" href="../../index.html">⟵ Gallery</a>
+    <div style="opacity:.6;font-size:12px">#55 Pharmacy</div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="card-inner">
+        <div class="content">
+          <div class="brand"><img src="logo.svg" alt="MediBox logo"/><div class="name">MediBox</div></div>
+          <h1 class="title">Rebooting for better performance.</h1>
+          <p class="subtitle">We're updating our pharmacy experience for <strong>MediBox</strong>. Care, delivered.</p>
+
+          <div class="timer" role="timer" aria-live="polite">
+            <div class="tbox"><div id="days" class="num">00</div><div class="label">Days</div></div>
+            <div class="tbox"><div id="hours" class="num">00</div><div class="label">Hours</div></div>
+            <div class="tbox"><div id="minutes" class="num">00</div><div class="label">Minutes</div></div>
+            <div class="tbox"><div id="seconds" class="num">00</div><div class="label">Seconds</div></div>
+          </div>
+          <div class="progress" aria-hidden="true"><div class="bar"></div></div>
+
+          <form id="notify-form" class="cta" autocomplete="on">
+            <input type="email" placeholder="Get notified (email)" aria-label="Email" required>
+            <button class="primary" type="submit"><i class="ri-mail-fill"></i> Notify me</button>
+            <span class="note">ETA in ~13 days</span>
+          </form>
+
+          <div class="features">
+            <div class="feature"><i class="ri-sparkling-fill"></i><h3>Faster</h3><p>Performance boost and cleaner UX.</p></div>
+            <div class="feature"><i class="ri-shield-keyhole-fill"></i><h3>Safer</h3><p>Security and reliability tuned up.</p></div>
+            <div class="feature"><i class="ri-rocket-2-fill"></i><h3>Smarter</h3><p>New features launching soon.</p></div>
+          </div>
+
+          <div class="cta">
+            <button type="button" class="primary" data-reset="13"><i class="ri-time-fill"></i> Reset 13 days</button>
+            <a style="color:var(--muted);text-decoration:none" href="mailto:hello@example.com"><i class="ri-mail-fill"></i> Contact</a>
+            <a style="color:var(--muted);text-decoration:none" href="tel:+100200300"><i class="ri-phone-fill"></i> +1 002 003 000</a>
+          </div>
+        </div>
+
+        <aside class="side">
+          <div class="art"></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> MediBox
+      <span class="socials">
+        <a href="https://twitter.com" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+        <a href="https://instagram.com" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+        <a href="https://github.com" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+      </span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

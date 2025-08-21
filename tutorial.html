@@ -1,0 +1,103 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <title>Customization Tutorial — Maintenance Templates</title>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+          <style>
+            :root { --bg:#0b1229; --card:#121a3a; --border:#263269; --text:#ffffff; --muted:#cbd5e1; --accent:#6a11cb; }
+            *{box-sizing:border-box}
+            body{margin:0;background:linear-gradient(135deg,rgba(255,255,255,0.04),transparent),var(--bg);color:var(--text);font-family:'Inter',system-ui}
+            header{padding:28px 18px}
+            h1{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0;font-size:clamp(22px,3vw,34px)}
+            main{max-width:920px;margin:0 auto;padding:12px 18px 40px}
+            section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 18px 22px;margin:14px 0;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+            h2{margin:6px 0 8px;font-size:18px}
+            p{margin:8px 0;color:var(--muted)}
+            code, pre{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:12px;padding:10px 12px;display:block;overflow:auto}
+            ul{margin:6px 0 10px 18px}
+            a{color:#9bbcff}
+          </style>
+        </head>
+        <body>
+          <header>
+            <h1>Customization Tutorial</h1>
+          </header>
+          <main>
+            <section>
+              <h2>Project structure</h2>
+              <p>Each template lives in its own folder under <code>maintenance_pages/</code> and includes <code>index.html</code>, <code>style.css</code>, <code>script.js</code>, <code>logo.svg</code>, and <code>favicon.svg</code>.</p>
+            </section>
+
+            <section>
+              <h2>Change the logo (SVG)</h2>
+              <p>Replace <code>logo.svg</code> in the template folder with your custom SVG, or edit colors and text inside. Update the image source if you rename the file:</p>
+              <pre>&lt;img src="logo.svg" alt="Your brand"&gt;</pre>
+              <p>Tip: Keep viewBox sizes around 128–256 and use a transparent background for best results.</p>
+            </section>
+
+            <section>
+              <h2>Update the favicon (SVG)</h2>
+              <p>Replace <code>favicon.svg</code> and ensure the <code>&lt;link rel="icon"&gt;</code> in <code>index.html</code> points to it:</p>
+              <pre>&lt;link rel="icon" type="image/svg+xml" href="favicon.svg"&gt;</pre>
+            </section>
+
+            <section>
+              <h2>Countdown timer</h2>
+              <ul>
+                <li><strong>Set target by days:</strong> In <code>script.js</code>, edit <code>DEFAULT_DAYS</code>.</li>
+                <li><strong>Reset programmatically:</strong> Call <code>resetCountdown(14)</code> from the console or use the Reset button.</li>
+                <li><strong>Override via URL:</strong> Append <code>?days=10</code> or <code>?date=2025-12-31T23:59:59Z</code> to the URL.</li>
+                <li><strong>Persisted:</strong> The target time is stored in <code>localStorage</code>. Clear it to restart.</li>
+              </ul>
+              <pre>// script.js
+const DEFAULT_DAYS = 14;
+resetCountdown(7); // sets 7 days from now</pre>
+            </section>
+
+            <section>
+              <h2>Change background and animations</h2>
+              <p>Open <code>style.css</code> and adjust theme variables or switch the variant class on the <code>&lt;body&gt;</code>.</p>
+              <pre>:root {
+  --bg: #0f1021;
+  --primary: #6a11cb;
+  --accent: #2575fc;
+}
+&lt;body class="v-glass"&gt; ... &lt;/body&gt;
+&lt;body class="v-neon"&gt;  ... &lt;/body&gt;
+&lt;body class="v-wave"&gt;  ... &lt;/body&gt;</pre>
+            </section>
+
+            <section>
+              <h2>Change title, paragraphs, and icons</h2>
+              <p>Edit content in <code>index.html</code>. Icons use a CDN such as Remix Icons or Boxicons. Change icon classes to swap visuals:</p>
+              <pre>&lt;i class="ri-tools-fill"&gt;&lt;/i&gt;  &lt;!-- Remix Icons --&gt;
+&lt;i class="bx bxs-cog"&gt;&lt;/i&gt;     &lt;!-- Boxicons --&gt;</pre>
+            </section>
+
+            <section>
+              <h2>Colors and typography</h2>
+              <p>Colors are defined with CSS variables in <code>style.css</code>. Fonts are loaded from Google Fonts in the document <code>&lt;head&gt;</code>.</p>
+            </section>
+
+            <section>
+              <h2>Make it your own</h2>
+              <ul>
+                <li>Swap social links and contact details.</li>
+                <li>Adjust border radius and shadows via <code>--radius</code> and <code>--shadow</code>.</li>
+                <li>Change component layout by editing the grid in <code>.card-inner</code>.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Troubleshooting</h2>
+              <ul>
+                <li>If timer doesn’t move, confirm your system clock and <code>localStorage</code> availability.</li>
+                <li>Reset the countdown by removing the browser’s <code>localStorage</code> key <code>mp_target_&lt;slug&gt;</code>.</li>
+              </ul>
+            </section>
+          </main>
+        </body>
+        </html>
