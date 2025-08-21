@@ -1,0 +1,141 @@
+
+    :root {
+      --bg: #0a0f14;
+      --bg-2: #16222a;
+      --text: #e6f1f5;
+      --muted: rgba(255,255,255,0.7);
+      --primary: #3a6073;
+      --accent: #16222a;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      background: var(--bg);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding: 56px 20px;
+    }
+
+    header.topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0));
+      z-index: 5;
+    }
+
+    header.topbar a.home {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .card {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      background: var(--card);
+      backdrop-filter: saturate(1.3) blur(8px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      padding: 36px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 56px; height: 56px; border-radius: 12px; }
+    .brand .name { font-family: 'Bebas Neue', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.3px; }
+
+    h1.title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.08;
+      margin: 10px 0 8px;
+      letter-spacing: -0.02em;
+    }
+    p.subtitle {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .timer { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 20px 0 12px; }
+    .tbox { background: rgba(255,255,255,0.08); border: 1px solid var(--border); border-radius: 14px; padding: 14px; text-align: center; }
+    .tbox .num { font-size: clamp(26px, 4vw, 44px); font-weight: 800; font-family: 'Bebas Neue', sans-serif; }
+    .tbox .label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items: center; }
+    .cta input[type="email"] {
+      flex: 1 1 220px;
+      min-width: 200px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline: none;
+    }
+    .cta button.primary {
+      padding: 14px 18px;
+      border: 0; border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white; font-weight: 700; letter-spacing: 0.02em; cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+    .cta .note { font-size: 12px; opacity: 0.75; }
+
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
+    .feature { background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+    .feature i { font-size: 20px; color: var(--primary); }
+    .feature h3 { margin: 8px 0 6px; font-size: 16px; font-weight: 700; font-family: 'Bebas Neue', sans-serif; }
+    .feature p { margin: 0; font-size: 14px; color: var(--muted); }
+
+    .side { position: relative; min-height: 300px; display: grid; place-items: center; }
+    .art { width: 88%; max-width: 520px; aspect-ratio: 1.2 / 1; border-radius: 18px; background: linear-gradient(135deg, var(--primary), var(--accent)); filter: drop-shadow(0 24px 60px rgba(0,0,0,0.4)); position: relative; overflow: hidden; }
+    .art::after { content: ""; position: absolute; inset: -40%; background: radial-gradient(closest-side, rgba(255,255,255,0.18), transparent 60%); transform: rotate(25deg); }
+
+    .progress { margin-top: 10px; height: 8px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+    .progress .bar { height: 100%; width: 48%; background: linear-gradient(90deg, var(--primary), var(--accent)); box-shadow: 0 8px 24px rgba(0,0,0,0.25) inset; border-radius: 999px; transition: width 1s ease; }
+
+    footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 20px; }
+    .socials { display: inline-flex; gap: 10px; margin-left: 10px; }
+    .socials a { color: var(--muted); text-decoration: none; }
+    .socials a:hover { color: var(--text); }
+
+    @media (max-width: 920px) {
+      .card-inner { grid-template-columns: 1fr; padding: 26px; }
+      .side { order: -1; }
+    }
+    
+
+        body { background: radial-gradient(closest-corner, rgba(255,255,255,0.06), rgba(255,255,255,0) 60%) fixed, var(--bg); }
+        .wrap::after { content: ""; position: absolute; inset: 0; background: conic-gradient(from 0turn, rgba(255,255,255,0.05), transparent 20% 80%, rgba(255,255,255,0.05)); mix-blend-mode: overlay; }
+        

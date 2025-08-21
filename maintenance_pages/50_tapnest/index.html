@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#43cea2">
+  <title>TapNest — Maintenance</title>
+  <meta name="description" content="Mobile App maintenance page for TapNest. Everything just a tap away.">
+  <meta property="og:title" content="TapNest — Maintenance"/>
+  <meta property="og:description" content="Mobile App maintenance page for TapNest. Everything just a tap away."/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="v-tiles">
+  <header class="topbar">
+    <a class="home" href="../../index.html">⟵ Gallery</a>
+    <div style="opacity:.6;font-size:12px">#50 Mobile App</div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="card-inner">
+        <div class="content">
+          <div class="brand"><img src="logo.svg" alt="TapNest logo"/><div class="name">TapNest</div></div>
+          <h1 class="title">A fresh coat of paint is coming.</h1>
+          <p class="subtitle">We're updating our mobile app experience for <strong>TapNest</strong>. Everything just a tap away.</p>
+
+          <div class="timer" role="timer" aria-live="polite">
+            <div class="tbox"><div id="days" class="num">00</div><div class="label">Days</div></div>
+            <div class="tbox"><div id="hours" class="num">00</div><div class="label">Hours</div></div>
+            <div class="tbox"><div id="minutes" class="num">00</div><div class="label">Minutes</div></div>
+            <div class="tbox"><div id="seconds" class="num">00</div><div class="label">Seconds</div></div>
+          </div>
+          <div class="progress" aria-hidden="true"><div class="bar"></div></div>
+
+          <form id="notify-form" class="cta" autocomplete="on">
+            <input type="email" placeholder="Get notified (email)" aria-label="Email" required>
+            <button class="primary" type="submit"><i class="bx bxs-envelope"></i> Notify me</button>
+            <span class="note">ETA in ~25 days</span>
+          </form>
+
+          <div class="features">
+            <div class="feature"><i class="bx bxs-magic-wand"></i><h3>Faster</h3><p>Performance boost and cleaner UX.</p></div>
+            <div class="feature"><i class="bx bxs-shield-alt-2"></i><h3>Safer</h3><p>Security and reliability tuned up.</p></div>
+            <div class="feature"><i class="bx bxs-rocket"></i><h3>Smarter</h3><p>New features launching soon.</p></div>
+          </div>
+
+          <div class="cta">
+            <button type="button" class="primary" data-reset="25"><i class="bx bxs-time"></i> Reset 25 days</button>
+            <a style="color:var(--muted);text-decoration:none" href="mailto:hello@example.com"><i class="bx bxs-envelope"></i> Contact</a>
+            <a style="color:var(--muted);text-decoration:none" href="tel:+100200300"><i class="bx bxs-phone"></i> +1 002 003 000</a>
+          </div>
+        </div>
+
+        <aside class="side">
+          <div class="art"></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> TapNest
+      <span class="socials">
+        <a href="https://twitter.com" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://instagram.com" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      </span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
